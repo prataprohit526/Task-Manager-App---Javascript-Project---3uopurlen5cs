@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Task Manager App</title>
+    <script src="https://kit.fontawesome.com/011f7153aa.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="input-container" >
+        <input type="text" class="input-area" id="inpuText" placeholder="Add Task here....">
+        <button class="btn" onclick="createTask()">Add Task</button>
+    </div>
+    <div class="main-container">
+      <div class="open-box open" id="no_status">
+        <h1 id="h-id">Open</h1>
+        <div class="add-task" id="drag-item-list" draggable="true">
+            <hr id="hr-line">
+        <p id="drag-item">Drag Item!!</p> 
+        <i class="fa-regular fa-circle" id="font-awesome"></i>
+          </div>
+      </div>
+      <div class="open-box inProgress">
+        <h1 id="h-id">In Progress</h1>
+        
+      </div>
+      <div class="open-box inReview" >
+        <h1 id="h-id">In Review</h1>
+      </div>
+      <div class="open-box done">
+        <h1 id="h-id">Done</h1>
+      </div>
+    </div>
 
+    <div id="overlay"></div>
+
+    <script src="App.js"></script>
+  </body>
+</html>
