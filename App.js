@@ -1,4 +1,3 @@
-
 const addTask = document.querySelectorAll(".add-task");
 const all_status = document.querySelectorAll(".open-box");
 let dragMe = null;
@@ -58,6 +57,7 @@ function createTask(){
   div.classList.add("add-task");
   div.setAttribute("draggable","true");
   div.setAttribute("id", "drag-item-list");
+  div.setAttribute("onclick","show()");
   /*------New Hr Line------ */
   let hr=document.createElement("hr");
   hr.setAttribute("id","hr-line");
@@ -74,5 +74,21 @@ function createTask(){
    no_status.appendChild(div);
   div.addEventListener("dragstart", dragStart);
   div.addEventListener("dragend", dragEnd);
+  }
+}
+/*------------------Form------------------------ */
+let x=document.getElementById("form");
+function show(){
+  if(x.style.display==="none"){
+    x.style.display="block"
+    x.style.top="14%"
+  }else{
+    x.style.display="none"
+  }
+}
+function cancel(){
+  if(x.style.display==="block"){
+    x.style.display="none"
+    x.style.top="-100%"
   }
 }
