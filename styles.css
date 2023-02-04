@@ -7,7 +7,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right, rgb(78, 110, 214) , rgb(121, 218, 213));
+    background-image: linear-gradient(to right, rgb(100 165 194) , rgb(179 232 230));
   }
   .fa-circle{
     position: absolute;
@@ -16,7 +16,7 @@
     color: red;
     font-size: 16px;
     
-  }
+  } 
   .main-container {
     width: 1000px;
     height: 80vh;
@@ -30,7 +30,7 @@
     margin: 5px;
     border-radius: 5px;
     width: 28%;
-    background-image: linear-gradient(to right,  #fafafa,#f0d3d3);
+    background-color: rgb(255, 244, 244);
     position: relative;
     padding: 60px 1rem 0.5rem;
   }
@@ -38,13 +38,12 @@
     width: 0px;
   }
   .open-box:nth-child(even) {
-    background-image: linear-gradient(to right,  #fafafa,#d3d2d2);
-   
+    background-color:rgb(255, 244, 240);
   }
   .open-box h1 {
     position: absolute;
     top: 0;
-    background-color: #e9d9d9;
+    background-color: rgb(255, 244, 244);
     left: 0;
     color: #050505;
     margin: 0;
@@ -74,7 +73,7 @@
     border-radius: 10px;
     font-family: system-ui;
     font-size: 16px;
-    background-image: linear-gradient(to right,  #fff,rgb(235, 175, 190));
+    background-color: #baa5a5;
    
     color: #060606;
     font-weight: 700;
@@ -114,4 +113,54 @@
     margin-left: 10px;
   }
 
+  #form{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: none;
+    background-color: rgb(169 163 163);
+    width: 40%;
+    align-items: center;
+    height: 185px;
+    border-radius: 10px;
+    font-family: system-ui;
+    position: absolute;
+    z-index: 10;
+    left: 25%;
+    top: -100%;
+    transition: 0.7s;
+
+}
   
+  .form-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+
+  }
+  input{
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+  }
+  textarea{
+    border-radius: 5px;
+    border: none;
+    overflow: hidden;
+  }
+  .right-section{
+
+    margin-left: 80px;
+  }
+  .btn1{
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #050505;
+    color: red;
+    font-size: 18px;
+    font-family: system-ui;
+  }
+  label{
+    font-weight: 700;
+  }
