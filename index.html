@@ -12,12 +12,35 @@
         <input type="text" class="input-area" id="inpuText" placeholder="Add Task here....">
         <button class="btn" onclick="createTask()">Add Task</button>
     </div>
+      <!------form Start-------->
+      <form action="#" id="form">
+        <div class="form-body">
+            <div class="left-section">
+              <button class="btn1" onclick="cancel()">Back</button><br>
+  <label >Name</label><br>
+  <input type="text"><br>
+  <label > Task</label><br>
+  <input type="text"><br>
+  <label class="last-date"> Dedline</label><br>
+   <input class="last-date" type="date">
+            </div>
+              <div class="right-section">
+                  <label >Discription</label><br> 
+                  <textarea name="" id="" cols="30"></textarea><br>
+                  <label >Address</lable><br>
+                    <textarea name="" id="" cols="30"></textarea>
+              </div>
+        </div>
+      </form>
+      <!--------Form End-------->
     <div class="main-container">
+    
       <div class="open-box open" id="no_status">
         <h1 id="h-id">Open</h1>
-        <div class="add-task" id="drag-item-list" draggable="true">
+        <div class="add-task" id="drag-item-list" draggable="true" onclick="show()">
             <hr id="hr-line">
         <p id="drag-item">Drag Item!!</p> 
+        
         <i class="fa-regular fa-circle" id="font-awesome"></i>
           </div>
       </div>
@@ -34,7 +57,7 @@
     </div>
 
     <div id="overlay"></div>
-
+ 
     <script src="App.js"></script>
   </body>
 </html>
