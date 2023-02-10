@@ -34,6 +34,9 @@
     position: relative;
     padding: 60px 1rem 0.5rem;
   }
+  .open-box .fa-solid{
+    display: none;
+  }
   ::-webkit-scrollbar {
     width: 0px;
   }
@@ -114,22 +117,20 @@
   }
 
   #form{
-    margin-top: 10px;
-    margin-bottom: 5px;
-    display: none;
     background-color: rgb(169 163 163);
-    width: 40%;
+    width: 560px;
     align-items: center;
-    height: 185px;
+    height: 200px;
     border-radius: 10px;
     font-family: system-ui;
     position: absolute;
     z-index: 10;
-    left: 25%;
-    top: -100%;
-    transition: 0.7s;
+    left: 30%;
+    top: 19%;
+    transition: 1.7s;
 
 }
+
   
   .form-body{
     display: flex;
@@ -161,6 +162,46 @@
     font-size: 18px;
     font-family: system-ui;
   }
+  .btn2{
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0e0000;
+    color: red;
+    font-size: 18px;
+    font-family: system-ui;
+    margin-left: 45%;
+  }
   label{
     font-weight: 700;
   }
+  .setter{
+    display: none;
+  }
+  .hide-form{
+    display:none;
+  }
+.add-task p{
+  pointer-events: none;
+}
+.add-task i{
+  pointer-events: none;
+}
+.add-task hr{
+  pointer-events: none;
+}
+#done-section .fa-circle{
+display: none;
+}
+#done-section hr{
+ display: none;
+}
+.fa-solid{
+  padding-top: 15px;
+  margin-left: 82%;
+  color: green;
+  font-size:30px;
+}
+#done-section .fa-solid{
+  display: block;
+}
