@@ -1,30 +1,23 @@
 const addTask = document.querySelectorAll(".add-task");
 const all_status = document.querySelectorAll(".open-box");
 let dragMe = null;
-
-let data = [
- 
-]
-
+let data = []
 addTask.forEach((ele) => {
   ele.addEventListener("dragstart", dragStart);
   ele.addEventListener("dragend", dragEnd);
 });
-
 function dragStart() {
     dragMe = this;
   setTimeout(() => {
     this.style.display = "none";
   },0);
 }
-
 function dragEnd() {
     dragMe = null;
   setTimeout(() => {
     this.style.display = "block";
   }, 0);
 }
-
 all_status.forEach((status) => {
   status.addEventListener("dragover", dragOver);
   status.addEventListener("dragenter", dragEnter);
@@ -49,8 +42,7 @@ function dragDrop() {
   this.appendChild(dragMe);
 }
 /* -----------Add new Task--------------------*/
-
-document.querySelector('#add-task').addEventListener("click", createTask);
+document.querySelector('#add-task').addEventListener("click", createTask);  
 function createTask(){
   let title = document.getElementById("inpuText").value.trim();
   if(title === "")  return;
@@ -90,27 +82,26 @@ function createTask(){
   div.addEventListener("onclick",displayfun);
   let form = document.getElementById("form");
   form.dataset.taskId = uniqueId;
-  window["task-name"].value ="";
+  window["task-name"].value =title;
   window["task-title"].value ="";
   window["task-date"].value ="";
   window["task-description"].value ="";
   window["task-priority"].value ="";
   show();
   enable()
-}
-function deleteItem(){
-  alert("Hii!! I am ready for delete");
-}
+ }
 /*------------------Form------------------------ */
 function show(){
   let form = document.getElementById("form");
   form.classList.remove('hide-form')
 }
-
 function showWithDetails(element){
   const id = element.dataset.id;
   const task = data.find(item => item.id === id);
-  window["task-name"].innerText = task.name;
+  console.log(task);
+  console.log(window["task-name"])
+  window["form"].dataset.taskId = id;
+  window["task-name"].value = task.name;
   window["task-title"].value = task.title;
   window["task-date"].value = task.date;
   window["task-description"].value = task.description;
@@ -118,29 +109,41 @@ function showWithDetails(element){
   show();
   displayfun();
 }
-
 window["save-task-data"].addEventListener('click', (e) => {
   e.preventDefault();
   let id = e.target.parentNode.parentNode.parentNode.dataset.taskId;
-  let name = window["task-name"].value.trim();
+  let name = window["inpuText"].value.trim();
   let title = window["task-title"].value.trim();
   let date = window["task-date"].value.trim();
   let description = window["task-description"].value.trim();
   let taskPriority = window["task-priority"].value.trim();
-  data.push(
-    {
+  const dataExists = data.find(item => item.id === id); 
+  if(dataExists){
+    const newData = data.filter(item => item.id !== id);
+    data = [{
       id,
       name,
       title,
       date,
       description,
       taskPriority
-    }
-  )
+    },...newData]; 
+  }else{
+    data.push(
+      {
+        id,
+        name,
+        title,
+        date,
+        description,
+        taskPriority
+      }
+    )
+  }
   let form = document.getElementById("form");
   form.classList.add('hide-form');
 })
-/*-------------------Input Box Disabled----------------------------- */
+/*-------------------Input Box Disabled------------------------ */
  let temp=document.querySelectorAll(".input-disable");
 function displayfun(){
    temp.forEach((e)=>{
@@ -150,9 +153,8 @@ function displayfun(){
  function enable(){
    temp.forEach((e)=>{
      e.disabled = false;
-   })
+   }) 
  }
- 
 function randomId(){
   let id = "";
   for(let i=0;i<9;i++){
